@@ -43,7 +43,7 @@
 
   <div class="field">
     <%= form.label :department %>
-    <%= form.text_field :department %>
+    <%= form.select :department, User.departments.values %>
   </div>
 
   <div class="actions">
