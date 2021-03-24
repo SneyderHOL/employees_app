@@ -1,0 +1,9 @@
+<div>
+  <p>Import employees from a file:</p>
+  <%= form_with url: users_path, multipart: true do |form| %>
+    <%= form.file_field :import_file, accept: "" %>
+    <div class="actions">
+      <%= form.submit 'Import' %>
+    </div>
+  <% end %>
+</div>
