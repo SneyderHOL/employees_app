@@ -40,24 +40,9 @@ class User < ApplicationRecord
     end
   end
 
-  def self.import_from_csv(file)
-    failed_to_saved = []
-    counter = 0
-    CSV.foreach(file.path, headers: true, header_converters: :symbol) do |row|
-      user = assign_from_row(row)
-      if user.save
-        counter += 1
-      else
-        failed_to_saved.push("#{user.email} - #{user.errors.full_messages.join(', ')}")
-      end
-    end
-    return counter if failed_to_saved.empty?
-    failed_to_saved.join('\n')
-  end
-
   def self.assign_from_row(row)
     user = where(email: row[:email]).first_or_initialize
-    user.assign_attributes row.to_hash
+    user.assign_attributes row.to_hash.except(:id)
     user
   end
 end

@@ -1,3 +1,8 @@
-first_name,last_name,email,phone,position,salary,department
-john,wick,jwick@example.com,78787878787,Accounter,3541.21,Accounting
-sam,jones,sam@example.com,78787878787,Engineer,3333,Operations
+id,first_name,last_name,email,phone,position,salary,department
+10,John,Andrews,john@example.com,11111111111,Engineer,5000.15,Operations
+20,Clark,Kent,clark@example.com,85552224444,guard,4356.14,Security
+30,Paul,Cooper,paul@example.com,44444444444,Accounter,7564.0,Tester
+40,sam,jones,sam@example.com,78787878787,Engineer,3333.0,Operations
+50,john,wick,jwick@example.com,78787878787,Accounter,3541.21,Tester
+10,testing,user,tuser@example.com,99999999999,Tester,200.384,Security
+22,user,test,utest@example.com,15551115555,Tester,356.7,Tester

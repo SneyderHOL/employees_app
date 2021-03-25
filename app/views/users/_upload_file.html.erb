@@ -1,7 +1,12 @@
 <div>
   <p>Import employees from a file:</p>
-  <%= form_with url: import_users_path, multipart: true do |form| %>
-    <%= form.file_field :import_file, accept: "text/csv" %>
+  <%= form_with model: @import, scope: User::Import, url: import_users_path do |form| %>
+    <% if @import.errors.any? %>
+      <% @import.errors.full_messages.each do |msg| %>
+        <div><%= msg %></div>
+      <% end %>
+    <% end %>
+    <%= form.file_field :file, accept: "text/csv" %>
     <div class="actions">
       <%= form.submit 'Import' %>
     </div>
