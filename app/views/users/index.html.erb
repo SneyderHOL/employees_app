@@ -22,9 +22,9 @@
         <td><%= user.first_name %></td>
         <td><%= user.last_name %></td>
         <td><%= user.email %></td>
-        <td><%= user.phone %></td>
+        <td><%= number_to_phone(user.phone, area_code: true) %></td>
         <td><%= user.position %></td>
-        <td><%= user.salary %></td>
+        <td><%= number_to_currency(user.salary, unit: "$", separator: ",", delimiter: ".") %></td>
         <td><%= user.department %></td>
         <td><%= link_to 'Show', user %></td>
         <td><%= link_to 'Edit', edit_user_path(user) %></td>
